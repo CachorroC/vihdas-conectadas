@@ -3,22 +3,30 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "styles:tcm": "tcm src",
+    "sass": "sass src:src && tcm src",
+    "lint": "next lint --fix && next lint",
+    "prebuild": "pnpm run sass && pnpm run lint",
+    "devbuild": "pnpm run prebuild && next build",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "dev": "URL=beta.rsasesorjuridico.com NEXTAUTH_URL=https://beta.rsasesorjuridico.com PREFIX=beta next dev",
+    "start": "next start"
   },
   "dependencies": {
-    "react": "^18",
-    "react-dom": "^18",
-    "next": "14.0.4"
+    "@stylistic/eslint-plugin": "^1.5.3",
+    "material-symbols": "^0.14.4",
+    "next": "14.0.5-canary.42",
+    "prettier": "^3.1.1",
+    "react": "18.3.0-canary-1d5667a12-20240102",
+    "react-dom": "18.3.0-canary-1d5667a12-20240102",
+    "sass": "^1.69.7"
   },
   "devDependencies": {
-    "typescript": "^5",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "eslint": "^8",
-    "eslint-config-next": "14.0.4"
+    "eslint": "^8.56.0",
+    "eslint-config-next": "14.0.4",
+    "typescript": "^5"
   }
 }
