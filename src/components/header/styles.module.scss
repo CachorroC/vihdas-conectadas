@@ -42,7 +42,7 @@
       & > i {
         font-size: 1.2rem;
         flex: none;
-        color: var(--OnS-Dark);
+        color: var(--md-sys-color-on-primary);
         margin: 0 auto;
         opacity: 0;
 
@@ -89,13 +89,8 @@
 
     .index_texto {
       position: absolute;
-      pointer-events: none;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      z-index: 10;
-      width: 100%;
+      left: 20vw;
+      width: 20vw;
 
       animation-name: headertexto;
       animation-duration: 2s;
@@ -109,6 +104,16 @@
         width: auto;
         height: 100svh;
         margin: 0 auto;
+      }
+      .title {
+        font-family: var(--poiret);
+        font-size: 3rem;
+        color: var(--md-sys-color-on-primary);
+      }
+
+      .description {
+        font-family: var(--josefa);
+        color: var(--md-sys-color-on-primary);
       }
     }
   }
@@ -270,7 +275,7 @@
   }
 
   100% {
-    top: 0;
+    top: 33svh;
     opacity: 1;
   }
 }

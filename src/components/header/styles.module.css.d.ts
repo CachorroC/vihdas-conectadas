@@ -1,4 +1,5 @@
 declare const styles: {
+  readonly 'description': string;
   readonly 'header': string;
   readonly 'headericon': string;
   readonly 'headertexto': string;
@@ -15,5 +16,7 @@ declare const styles: {
   readonly 'sdb10': string;
   readonly 'sdb11': string;
   readonly 'sigaLeyendo': string;
+  readonly 'title': string;
 };
 export = styles;
+

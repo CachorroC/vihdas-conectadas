@@ -9,26 +9,29 @@
   border: none;
   outline: none;
   text-decoration: none;
-  -webkit-transform: perspective(1px) translateZ(0) transform 0.2s;
+
   transform: perspective(1px) translateZ(0) transform 0.2s;
   box-shadow: var(--dp6);
+
   & .icon {
     line-height: 0.7;
     color: var(--OnS-Dark);
     font-size: 4rem;
     width: 100%;
     flex: none;
-    -webkit-transform: translateZ(0);
+
     transform: translateZ(0);
-    -webkit-transition-duration: 0.5s;
+
     transition-duration: 0.5s;
-    -webkit-transition-property: color;
+
     transition-property: color;
   }
+
   &:hover,
   &:active {
     background-color: var(--color-primary-transparent-200);
     box-shadow: var(--dp12);
+
     & .icon {
       color: var(--PrimaryColor);
     }
@@ -57,21 +60,24 @@
   transition-property: opacity, transform, width;
   transition-duration: 1.5s;
   box-shadow: var(--dp2);
+
   & .icon {
     font-size: 6rem;
     display: none;
     color: var(--SecondaryColorDarker);
-    -webkit-transform: translateZ(0);
+
     transform: translateZ(0);
-    -webkit-transition-duration: 1.5s;
+
     transition-duration: 1.5s;
-    -webkit-transition-property: color, opacity;
+
     transition-property: color, opacity;
   }
+
   &:hover,
   &:active {
     transition: 0.5s;
     box-shadow: var(--dp8);
+
     & .icon {
       transform: scale(1.3);
       color: var(--SecondaryColorLighter);
@@ -92,6 +98,7 @@
   overflow: hidden;
   transition-duration: 1.5s;
   transition-property: width, height, background-color, opacity, transform;
+
   .activa {
     display: flex;
     position: relative;
@@ -107,12 +114,13 @@
     border-radius: 2vh;
     left: 0;
     top: 0;
-    -webkit-transform: perspective(1px) translateZ(0);
+
     transform: perspective(1px) translateZ(0);
-    -webkit-transition-property: all;
+
     transition-property: all;
-    -webkit-transition-duration: 1.5s;
+
     transition-duration: 1.5s;
+
     .icon {
       font-size: 2.5rem;
       flex: none;
@@ -121,15 +129,16 @@
       margin: 0 auto;
       line-height: 0.8;
       color: var(--color-primary-200);
-      -webkit-transform: perspective(1px), translateZ(0), scale(1.1);
+
       transform: perspective(1px), translateZ(0), scale(1.1);
-      -webkit-transition-duration: 1.5s;
+
       transition-duration: 1.5s;
-      -webkit-transition-property: all;
+
       transition-property: all;
       text-align: center;
       vertical-align: middle;
     }
+
     .text {
       color: var(--OnP);
       width: auto;
@@ -137,30 +146,101 @@
       margin: 0 auto;
       text-align: center;
       transition: all 1.5s;
-      -webkit-transition: all 1.5s;
+
       opacity: 1;
     }
+
     &:hover,
     &:active {
       box-shadow: var(--dp8);
-      -webkit-animation-name: backpulse-links;
+
       animation-name: backpulse-links;
-      -webkit-animation-duration: 3s;
+
       animation-duration: 3s;
-      -webkit-animation-delay: 4s;
+
       animation-delay: 4s;
-      -webkit-animation-timing-function: ease-in-out;
+
       animation-timing-function: ease-in-out;
-      -webkit-animation-iteration-count: infinite;
+
       animation-iteration-count: infinite;
       animation-fill-mode: forwards;
-      -webkit-animation-fill-mode: forwards;
+
       background-color: var(--color-primary-transparent-400);
+
       .icon {
         color: var(--SecondaryColorDarker);
       }
+
       .text {
         color: var(--SecondaryColorDarker);
+      }
+    }
+  }
+
+  .vl {
+    border-left: 2px solid var(--color-success-transparent-500);
+    height: 65vh;
+    position: absolute;
+    left: 20%;
+    margin: 0 auto;
+    bottom: auto;
+    top: 0;
+    transition-property: all;
+    transition-duration: 1.5s;
+    opacity: 1;
+  }
+
+  .vl2 {
+    border-top: 2px solid var(--color-success-transparent-500);
+    width: 100vw;
+    position: absolute;
+    left: 0;
+    top: auto;
+    margin: 0 auto;
+    bottom: 65%;
+    transition-property: all;
+    transition-duration: 1.5s;
+    opacity: 1;
+  }
+
+  .myLinks {
+    display: none;
+    width: auto;
+    position: absolute;
+    right: 2.5%;
+    bottom: 11.5%;
+    padding: 0;
+    height: auto;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: space-evenly;
+    transition-property: all;
+    transition-duration: 1.5s;
+    opacity: 1;
+    .link {
+      &:link,
+      &:visited {
+        flex: none;
+        display: flex;
+        margin: auto;
+        flex-flow: row wrap;
+        justify-content: space-evenly;
+        align-items: center;
+        align-content: space-around;
+        text-align: center;
+        vertical-align: middle;
+        width: 28%;
+        box-sizing: border-box;
+        height: 15vh;
+        background-color: var(--Surface);
+        border-radius: 2vh;
+        box-shadow: var(--dp2);
+        z-index: 15;
+        transform: perspectiva(1px) translateZ(0);
+        transition-duration: 1.5s;
+        transition-property: all;
+        padding: 2vh;
       }
     }
   }
@@ -175,6 +255,7 @@
   overflow: auto;
   display: flex;
   box-sizing: border-box;
+
   .flip {
     &Card {
       width: 33.3%;
@@ -197,15 +278,17 @@
       &:hover {
         transform: rotateY(180deg);
       }
+
       .frontCard,
       .backCard {
         position: relative;
         width: 100%;
         height: 100%;
-        -webkit-backface-visibility: hidden;
+
         backface-visibility: hidden;
         background-color: #afbed5 /*bg-10-tint)*/;
       }
+
       .backCard {
         background-color: var(--PrimaryColorLighter) /*bg-4-shade)*/;
         border: 5px solid var(--SecondaryColor);

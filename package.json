@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "styles:tcm": "tcm src",
-    "sass": "sass src:src && tcm src",
+    "sass": "tcm src",
     "lint": "next lint --fix && next lint",
     "prebuild": "pnpm run sass && pnpm run lint",
     "devbuild": "pnpm run prebuild && next build",

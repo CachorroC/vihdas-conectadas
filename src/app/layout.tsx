@@ -2,7 +2,7 @@ import './manifest';
 import '#@/styles/globals.css';
 import 'material-symbols';
 import type { Metadata, Viewport } from 'next';
-import { Josefin_Sans, Raleway } from 'next/font/google';
+import { Josefin_Sans, PT_Serif_Caption, Playfair_Display, Poiret_One, Raleway } from 'next/font/google';
 import '#@/styles/globals.css';
 import { ReactNode } from 'react';
 import { NavigationContextProvider } from './context/navigation-context';
@@ -11,6 +11,7 @@ import { TopNav } from '../components/navigation/topnav';
 import Script from 'next/script';
 import { SigaLeyendoProvider } from './context/siga-leyendo-context';
 import { Header } from '#@/components/header';
+import { ScrollContextProvider } from './context/scroll-context';
 
 
 const prefix = process.env.NODE_ENV === 'production'
@@ -34,6 +35,38 @@ const raleway = Raleway(
     variable: '--raleway',
   }
 );
+
+const playDisp = Playfair_Display(
+  {
+    subsets : [ 'latin-ext', 'latin' ],
+    preload : true,
+    variable: '--play-display',
+  }
+);
+
+const ptserif = PT_Serif_Caption(
+  {
+    subsets : [ 'latin' ],
+    display : 'auto',
+    preload : false,
+    variable: '--ptserif',
+    weight  : '400',
+  }
+);
+
+
+
+const poiret = Poiret_One(
+  {
+    subsets : [ 'latin' ],
+    weight  : [ '400' ],
+    preload : false,
+    variable: '--poiret',
+  }
+);
+
+
+
 
 export const viewport: Viewport = {
   width       : 'device-width',
@@ -70,15 +103,17 @@ export default function RootLayout(
 ) {
       return (
         <html lang="es-CO"  >
-          <body className={ ` ${ raleway.className } ${ josefina.variable } [ color-scheme: light dark ]` }>
-            <NavigationContextProvider>
-              <SigaLeyendoProvider>
-                <Header />
-                <MenuButton />
-                <TopNav />
-                { children }
-              </SigaLeyendoProvider>
-            </NavigationContextProvider>
+          <body className={ ` ${ raleway.variable } ${ josefina.variable } ${ poiret.variable } ${ playDisp.variable } ${ ptserif.variable } [ color-scheme: light dark ]` }>
+            <ScrollContextProvider>
+              <NavigationContextProvider>
+                <SigaLeyendoProvider>
+                  <Header />
+                  <TopNav />
+                  <MenuButton />
+                  { children }
+                </SigaLeyendoProvider>
+              </NavigationContextProvider>
+            </ScrollContextProvider>
             <Script
               src={`https://${ prefix }.rsasesorjuridico.com/installService-worker.js`}
             />

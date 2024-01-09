@@ -1,15 +1,20 @@
 'use client';
 import styles from './styles.module.css';
 import { useNavigationContext } from '#@/app/context/navigation-context';
+import { useScrollContext } from '#@/app/context/scroll-context';
 
 export function MenuButton () {
       const {
         isNavOpen, setIsNavOpen
       } = useNavigationContext();
+
+      const {
+        isIntersecting
+      }= useScrollContext();
       return (
-        <button type='button' className={isNavOpen
+        <button type='button' className={`${ isNavOpen
           ? styles.closebtn
-          : styles.openbtn}onClick={ () => {
+          : styles.openbtn } ${ isIntersecting && styles.sticky }`}onClick={ () => {
                   return setIsNavOpen(
                     (
                       e

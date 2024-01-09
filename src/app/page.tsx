@@ -1,4 +1,5 @@
 'use client';
+import { ContainerPrincipal } from '#@/components/container';
 import { CardMenu } from '#@/components/navigation/card-menu';
 import styles from '#@/styles/page.module.css';
 import { useSigaLeyendoContext } from './context/siga-leyendo-context';
@@ -10,7 +11,7 @@ export default function Home () {
 
       return (
 
-        <div className={ styles.container }>
+        <ContainerPrincipal>
           <div className={ styles.texto } ref={textoRef}>
 
             <h1><strong>VIHdas Conectadas:</strong> aportes a la normativa digital para la
@@ -32,9 +33,9 @@ export default function Home () {
             </p>
             <p>¡Bienvenides!</p>
 
+            <CardMenu />
           </div>
-          <CardMenu />
-        </div>
+        </ContainerPrincipal>
 
       );
 }

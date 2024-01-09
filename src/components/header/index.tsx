@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { useSigaLeyendoContext } from '#@/app/context/siga-leyendo-context';
 import { usePathname } from 'next/navigation';
 
+
 export function Header() {
       const textoRef = useSigaLeyendoContext();
 
@@ -45,43 +46,32 @@ export function Header() {
             <div className={styles.index_icon}>
               <Image
                 src={`/img/index${ currentPage }_icon.png`}
-                className={styles.index_icon_compu}
-                fill={true}
-                alt={'desktop icon'}
+                className={ styles.index_icon_compu }
+                priority={true}
+                width={1200}
+                height={1200}
+                alt={ 'desktop icon' }
+
               />
               <Image
                 src={`/img/index${ currentPage }_icon_tablet.png`}
                 className={styles.index_icon_tablet}
-                fill={true}
+                width={1200} priority={true}
+                height={1200}
                 alt={'tablet icon'}
               />
               <Image
                 src={`/img/index${ currentPage }_icon_mobile.png`}
                 className={styles.index_icon_mobile}
-                fill={true}
+                width={1200} priority={true}
+                height={1200}
                 alt={'mobile icon'}
               />
             </div>
 
             <div className={styles.index_texto}>
-              <Image
-                src={`/img/index${ currentPage }_texto.png`}
-                className={styles.index_texto_compu}
-                fill={true}
-                alt={'desktop icon'}
-              />
-              <Image
-                src={`/img/index${ currentPage }_texto_tablet.png`}
-                className={styles.index_texto_tablet}
-                fill={true}
-                alt={'tablet icon'}
-              />
-              <Image
-                src={`/img/index${ currentPage }_texto_mobile.png`}
-                className={styles.index_texto_mobile}
-                fill={true}
-                alt={'mobile icon'}
-              />
+              <h1 className={ styles.title}><strong>VIH</strong>das Conectadas</h1>
+              <h3 className={styles.description}>Aportes a la normativa digital para la desestigmatización del vih</h3>
             </div>
           </div>
         </div>
