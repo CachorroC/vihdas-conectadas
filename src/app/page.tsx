@@ -1,95 +1,40 @@
-import Image from 'next/image';
-import styles from './page.module.css';
+'use client';
+import { CardMenu } from '#@/components/navigation/card-menu';
+import styles from '#@/styles/page.module.css';
+import { useSigaLeyendoContext } from './context/siga-leyendo-context';
 
-export default function Home() {
+export default function Home () {
+
+      const textoRef= useSigaLeyendoContext();
+
+
       return (
-        <main className={styles.main}>
-          <div className={styles.description}>
-            <p>
-          Get started by editing&nbsp;
-              <code className={styles.code}>src/app/page.tsx</code>
+
+        <div className={ styles.container }>
+          <div className={ styles.texto } ref={textoRef}>
+
+            <h1><strong>VIHdas Conectadas:</strong> aportes a la normativa digital para la
+					desestigmatización del VIH</h1>
+
+            <p>Esta iniciativa nace a partir de la necesidad de Identificar balances y
+					desequilibrios en la información y acceso a los mecanismos de mitigación del VIH
+					existentes en el Distrito Capital, como un aporte a la política pública
+					distrital existente enfocada en la población de hombres que tienen sexo con
+					hombres (HSH) que disfrutan las prácticas sexuales de riesgo. Se crea. Partir de
+					la necesidad de tener las herramientas de VIH a la mano y disponible para todas,
+					en donde el ciudadano sea quién decida cómo protegerse del virus, aportando a la
+					des estigmatización de la población seropositiva y de aquellos hombres que
+					disfrutan y gozan de estas prácticas sexuales. Los hombres que tienen sexo con
+					hombres existimos y no dejaremos de luchar por nuestros derechos. </p>
+            <p>A continuación, podrás navegar a través de nuestro sitio web en donde encontrarás
+					todo lo que debes saber acerca del virus del VIH y algunas estrategias para
+					mitigarlo.
             </p>
-            <div>
-              <a
-                href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-            By{' '}
-                <Image
-                  src="/vercel.svg"
-                  alt="Vercel Logo"
-                  className={styles.vercelLogo}
-                  width={100}
-                  height={24}
-                  priority
-                />
-              </a>
-            </div>
+            <p>¡Bienvenides!</p>
+
           </div>
+          <CardMenu />
+        </div>
 
-          <div className={styles.center}>
-            <Image
-              className={styles.logo}
-              src="/next.svg"
-              alt="Next.js Logo"
-              width={180}
-              height={37}
-              priority
-            />
-          </div>
-
-          <div className={styles.grid}>
-            <a
-              href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-              className={styles.card}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <h2>
-            Docs <span>-&gt;</span>
-              </h2>
-              <p>Find in-depth information about Next.js features and API.</p>
-            </a>
-
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-              className={styles.card}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <h2>
-            Learn <span>-&gt;</span>
-              </h2>
-              <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-            </a>
-
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-              className={styles.card}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <h2>
-            Templates <span>-&gt;</span>
-              </h2>
-              <p>Explore starter templates for Next.js.</p>
-            </a>
-
-            <a
-              href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-              className={styles.card}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <h2>
-            Deploy <span>-&gt;</span>
-              </h2>
-              <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-              </p>
-            </a>
-          </div>
-        </main>
       );
 }

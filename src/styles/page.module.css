@@ -1,0 +1,44 @@
+.loader {
+  position: fixed;
+  left: 35%;
+  top: 25%;
+  z-index: 1;
+  margin: 0 auto;
+  border-radius: 50%;
+  background-color: var(--md-sys-color-primary);
+  width: 50vh;
+  height: 50vh;
+  -webkit-animation: ld-heartbeat 2s linear infinite;
+  animation: ld-heartbeat 2s linear infinite;
+  box-shadow: var(--dp16);
+}
+.loader img {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.container {
+  background-color: var(--md-sys-color-background);
+  color: var(--md-sys-color-on-background);
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  height: 100svh;
+}
+.container .texto {
+  box-sizing: border-box;
+  position: relative;
+  margin: 0% auto;
+  text-align: justify;
+  width: 70%;
+  height: 100svh;
+  right: 0;
+  padding: 0 3%;
+  background-color: var(--md-sys-color-surface-container);
+  box-shadow: var(--dp1);
+  z-index: 5;
+  overflow: auto;
+}
+
+/*# sourceMappingURL=page.module.css.map */

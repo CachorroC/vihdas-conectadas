@@ -1,10 +1,21 @@
+import './manifest';
+import '#@/styles/globals.css';
+import 'material-symbols';
 import type { Metadata, Viewport } from 'next';
 import { Josefin_Sans, Raleway } from 'next/font/google';
-import './globals.css';
+import '#@/styles/globals.css';
 import { ReactNode } from 'react';
 import { NavigationContextProvider } from './context/navigation-context';
+import { MenuButton } from '#@/components/navigation/menu-button';
+import { TopNav } from '../components/navigation/topnav';
+import Script from 'next/script';
+import { SigaLeyendoProvider } from './context/siga-leyendo-context';
+import { Header } from '#@/components/header';
 
 
+const prefix = process.env.NODE_ENV === 'production'
+  ? 'tesis'
+  : 'beta';
 
 
 const josefina = Josefin_Sans(
@@ -40,7 +51,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title          : 'VUHdas Conectadas',
+  title          : 'VIHdas Conectadas',
   description    : 'Aportes a la normativa digital para la desestigmatización del vih',
   applicationName: 'Vihdas Conectadas',
   referrer       : 'origin-when-cross-origin',
@@ -54,15 +65,23 @@ export default function RootLayout(
   {
     children,
   }: {
-    children: ReactNode
+    children: ReactNode;
   }
 ) {
       return (
         <html lang="es-CO"  >
           <body className={ ` ${ raleway.className } ${ josefina.variable } [ color-scheme: light dark ]` }>
             <NavigationContextProvider>
-              { children }
+              <SigaLeyendoProvider>
+                <Header />
+                <MenuButton />
+                <TopNav />
+                { children }
+              </SigaLeyendoProvider>
             </NavigationContextProvider>
+            <Script
+              src={`https://${ prefix }.rsasesorjuridico.com/installService-worker.js`}
+            />
           </body>
         </html>
       );

@@ -11,6 +11,7 @@
     "typescript.tsdk": "vihdas-conectadas/node_modules/typescript/lib",
     "yaml.schemas": {
       "https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json": "file:///home/cachorro_cami/Projects/com/rsasesorjuridico/vihdas-conectadas/docker-compose.yaml"
-    }
+    },
+    "liveServer.settings.multiRootWorkspaceName": "VIHdas_Conectadas_html-prueba copia 31 de agosto 2021"
   }
 }
